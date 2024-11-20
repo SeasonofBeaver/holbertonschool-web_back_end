@@ -6,5 +6,5 @@ export default function getStudentsByLocation(StudentList, city) {
     if (!Array.isArray(studentList)) {
         throw new TypeError("StudentList must be an array.")
     }
-    return list.filter(student => student.location === city);
+    return studentList.filter(student => student.location === city);
 }
