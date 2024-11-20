@@ -8,6 +8,4 @@ export default function updateUniqueItems(shoppingList) {
             map.set(key, 100);
         }
     }
-
-    return map;
 }
