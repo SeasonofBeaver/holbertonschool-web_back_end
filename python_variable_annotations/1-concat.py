@@ -1,3 +1,4 @@
 #!/usr/bin/env python3
-def add(a: str, b: str) -> str:
+"""A concat function that combines 2 strings."""
+def concat(a: str, b: str) -> str:
     return a + b
