@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""create a string function that returns the string representation of the number input"""
+"""
+create a string function that returns
+the string representation of the number input
+"""
 
 
 def to_str(n: float) -> str:
