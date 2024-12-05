@@ -12,13 +12,5 @@ async def wait_random(max_delay: int = 10) -> float:
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """ create a list of multiple delays made. """
-    delays = []
-    for _ in range(n):
-        delay = await wait_random(max_delay)
-        for i, existing in enumerate(delays):
-            if delay < existing:
-                delays.insert(i, delay)
-                break
-        else:
-            delays.append(delay)
+    delays = await asyncio.gather(*(wait_random(max_delay) for _ in range(n)))
     return sorted(delays)
