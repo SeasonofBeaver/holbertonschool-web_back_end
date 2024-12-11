@@ -9,7 +9,7 @@ async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 async def measure_runtime() -> float:
     """
-    measuring the time it takes to run 
+    measuring the time it takes to run
     all coroutines at the same time.
     """
 
