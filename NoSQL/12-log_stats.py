@@ -4,25 +4,26 @@
 from pymongo import MongoClient
 
 
-def nginx_stats():
-    """Fetches and prints stats about Nginx logs."""
-    client = MongoClient()
-    db = client.logs
-    collection = db.nginx
+def nginx_stats() -> None:
+    """prints stats about Nginx logs"""
+    try:
+        with MongoClient("mongodb://localhost:27017/") as client:
+            db = client.logs
+            collection = db.nginx
 
-    total_logs = collection.count_documents({})
-    print(f"{total_logs} logs")
+            total_logs = collection.count_documents({})
+            print(f"{total_logs} logs")
 
-    print("Methods:")
-    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
-    for method in methods:
-        methodCount = collection.count_documents({"method": method})
-        print(f"\tmethod {method}: {methodCount}")
+            methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+            print("Methods:")
+            for method in methods:
+                method_count = collection.count_documents({"method": method})
+                print(f"\tmethod {method}: {method_count}")
 
-    statusCheck = collection.count_documents(
-        {"method": "GET", "path": "/status"}
-    )
-    print(f"{statusCheck} status check")
+            status_check = collection.count_documents({"method": "GET", "path": "/status"})
+            print(f"{status_check} status check")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
 if __name__ == "__main__":
