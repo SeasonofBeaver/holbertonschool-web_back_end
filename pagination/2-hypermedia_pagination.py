@@ -3,7 +3,7 @@
 
 import csv
 import math
-from typing import List, Tuple, Dict, Optional
+from typing import List, Tuple, Dict
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -44,7 +44,7 @@ class Server:
             return []
         return dataset[start_index:end_index]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Optional[int]]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """a dictionary with pagination details"""
         data = self.get_page(page, page_size)
         total_data = len(self.dataset())
