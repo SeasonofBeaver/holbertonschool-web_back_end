@@ -1,20 +1,15 @@
 // Asking for the name of the user.
 
-const readline = require('readline');
+const std = require('process');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+std.stdout.write('Welcome to Holberton School, what is your name?\n');
+std.stdin.on('readable', () => {
+  const name = std.stdin.read();
+  if (name) {
+    std.stdout.write(`Your name is: ${name}`);
+  }
 });
 
-console.log("Welcome to Holberton School, what is your name?");
-
-rl.on('line', (input) => {
-    console.log(`Your name is: ${input}`);
-    rl.close();
-});
-
-rl.on('close', () => {
-    console.log("This important software is now closing\n");
-    process.exit(0);
+std.stdin.on('end', () => {
+  console.log('This important software is now closing');
 });
