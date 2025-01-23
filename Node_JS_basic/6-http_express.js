@@ -1,5 +1,3 @@
-// create an express http server 
-
 const express = require('express');
 
 const app = express();
