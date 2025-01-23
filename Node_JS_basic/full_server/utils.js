@@ -1,5 +1,3 @@
-// read the database async
-
 const fs = require('fs');
 
 export default function readDatabase(path) {

@@ -1,5 +1,3 @@
-// Create a Students Controller which can sort them with different Details
-
 import readDatabase from '../utils';
 
 export default class StudentsController {

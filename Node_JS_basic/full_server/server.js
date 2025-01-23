@@ -1,5 +1,3 @@
-// Small Server that get the routes from routes
-
 import router from './routes';
 
 const express = require('express');
