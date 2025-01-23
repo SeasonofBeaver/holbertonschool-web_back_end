@@ -1,4 +1,4 @@
-// read the database async.
+// read the database async
 
 const fs = require('fs');
 

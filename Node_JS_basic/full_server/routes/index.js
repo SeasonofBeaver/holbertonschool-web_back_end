@@ -1,4 +1,4 @@
-// Create routes for the server to follow.
+// Create routes for the server to follow
 
 import AppController from '../controllers/AppController';
 import StudentsController from '../controllers/StudentsController';

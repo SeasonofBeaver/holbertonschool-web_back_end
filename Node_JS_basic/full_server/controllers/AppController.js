@@ -1,4 +1,4 @@
-// homepage for the http server.
+// homepage for the http server
 
 export default class AppController {
     static getHomepage(request, response) {

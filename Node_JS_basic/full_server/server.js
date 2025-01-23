@@ -1,4 +1,4 @@
-// Small Server that get the routes from routes.
+// Small Server that get the routes from routes
 
 import router from './routes';
 
